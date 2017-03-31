@@ -17,7 +17,7 @@ public class QuerystringAccessController {
         return String.format("Year is: %s", year);
     }
 
-    @GetMapping("/map-example/map")
+    @GetMapping("/map-example")
     public String getMapParams(@RequestParam Map querystring) {
         return querystring.toString();
     }
