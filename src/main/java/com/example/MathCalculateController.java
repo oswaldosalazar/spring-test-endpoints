@@ -19,15 +19,25 @@ public class MathCalculateController {
     @GetMapping("/math/calculate")
     public String getCalculate(@RequestParam int x, int y, String operation) {
 
-        if (operation == null || operation.equals("add")) {
+        if (operation == null) {
             result = String.format("%s + %s = %s",x, y, x + y);
-        } else if (operation.equals("multiply")) {
-            result = String.format("%s * %s = %s",x, y, x * y);
-        } else if (operation.equals("substract")) {
-            result = String.format("%s - %s = %s",x, y, x - y);
-        } else if (operation.equals("divide")) {
-            result = String.format("%s / %s = %s",x, y, x / y);
+        } else {
+            switch (operation) {
+                case "add":
+                    result = String.format("%s + %s = %s",x, y, x + y);
+                    break;
+                case "multiply":
+                    result = String.format("%s + %s = %s",x, y, x * y);
+                    break;
+                case "substract":
+                    result = String.format("%s + %s = %s",x, y, x - y);
+                    break;
+                case "divide":
+                    result = String.format("%s + %s = %s",x, y, x - y);
+                    break;
+            }
         }
+
         return result;
     }
 
